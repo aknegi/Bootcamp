@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="ttn.css">
+	
+	<nav>
+	  <label class="title">TO THE NEW</label> 
+	  <div class="rightbutton ">
+	  <input class="thecolor" type="button" href="#" value="Home"/>
+	  <input  class="thecolor" type="button" href="#" value="Quick Help"/>
+	  </div>
+	</nav>
+	
+<hr>
+
+</head>
+<body>
+
+
+<div class="bodyForm">
+<form >
+	<header class="bugR"> 
+		<div class="leftmargin">Bug Report</div> 
+	</header>
+
+	<div class="leftmargin">
+	
+		<div >
+			<label >title*</label><br>
+			<input type="text" class="textborder maxwidth" required/><br>
+			<br>
+
+			<label >Description* </label><br>
+			<textarea class=" textborder maxwidth" required></textarea><br>
+		</div>
+
+		<div>
+			<label >Operating System</label><br>
+		  	<select class="btncolor maxwidth textborder"  required>
+		  	<option >Windows XP</option>
+		    <option >Android</option>
+		    <option >IOS</option>
+		    <option >UNIX</option>
+		  	</select>
+	  	</div>
+
+	  <div>
+	  <label >Product</label><br>
+	  <select class="btncolor maxwidth textborder" required >
+	  	<option >Formoid</option>
+		<option >Formoid</option>
+	  </select></div>
+
+	  	<div  >
+		<label>Version*<br></label>
+		<input class="maxwidth textborder" type="text" required/><br>
+		</div>
+
+		<label class="maxwidth">License:</label><br>
+		<input type="radio" >
+		<label for="free">Free</label>
+		&nbsp &nbsp
+		<input type="radio" >
+		<label for="Business"> Business</label>
+		<br>
+
+	  <label>Severity</label><br>
+	  <select class="btncolor maxwidth textborder" >
+	  	<option >Critical</option>
+		<option >moderate</option>
+	  </select><br>
+
+	   <label class="">Attachments</label><br>
+	   <input type="file" id="myfile" class="maxwidth textborder filetype">
+	</div>
+
+	    <footer class="sendbtn" >
+	    <input class="btncolor" type="submit" value="Send"/> 
+		</footer>
+
+	
+</form>
+</div>
+</body>
+</html>
