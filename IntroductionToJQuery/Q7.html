@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+<html>
+<head><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<button class="but1">I am button 1</button>
+<button class="but2">I am button 2</button>
+
+<script type="text/javascript">
+$(function(){
+	$(".but1").click(function(){
+		$(".but2").trigger("click");
+	});
+	$(".but2").click(function(){
+		alert("I am button 2");
+	});
+});
+
+</script>
+</body>
+
+
+</html>
+
+<!-- <script type="text/javascript">
+$(function(){
+	$(".but1").click(function(){
+		$(".but2").trigger("click").click(function(){
+		alert("I am button 2");
+	});;
+	});
+	});
+
+</script> -->

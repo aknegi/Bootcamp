@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question numbwe 13</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var h=0;
+		$("div").each(function(){
+			if($(this).height()>h)
+			{
+				h=$(this).height();
+			}
+		});
+		alert("The max height is "+h);
+	});
+</script>
+<body >
+	<div style="height: 40px; background-color: red;" >
+		 40px
+	</div>
+	<div style="height: 80px;background-color: aqua;" >
+		 80px
+	</div>
+	<div style="height: 70px; background: green;" >
+		 70px
+	</div>
+	<div style="height: 60px; background: yellow;" >
+		 60px
+	</div>
+	
+</body>
+</html>

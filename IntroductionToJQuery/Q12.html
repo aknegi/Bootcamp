@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div style="height:100px;width:500px;padding:10px;border:1px solid blue;">
+        This is a div element.
+        <li>list item 1</li>   
+        <li>list item 2</li>   
+        <li>list item 3</li>   
+    </div>
+    <script>
+        $(document).ready(function(){
+        $("div").click(function(){
+        alert("The div element was clicked.");
+        });
+        
+        $("li").click(function(event){
+        event.stopPropagation();
+        alert("The li element was clicked.");
+        });
+    });
+</script>
+</body>
+</html>

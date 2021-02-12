@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Question number 17</title>
+	<script type="text/javascript">
+		
+   $(document).ready(function(){
+   	var images = ['img/1.jpeg',	'img/2.jpeg','img/3.jpeg','img/4.jpeg','img/5.jpeg'];
+						
+   	$('#start').on("click", function(){
+   	var i=0;
+
+	var si=setInterval(function() {
+ 	$('div').html("<div><img src="+images[i]+" height= '400px' width='500px' /></div>");
+	 	i=i+1;
+
+	 	if(i>4){i=0;}
+	 	}, 2000);
+
+ 	$('#stop').on("click",function()
+		{
+		clearInterval(si);
+		});
+});
+}); 
+  </script>
+</head>
+<body>
+	<button id="start">start</button>
+	<button id="stop">stop</button>
+	<div class="container"> </div>
+</body>
+</html>

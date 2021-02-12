@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title> Question number 16</title>
+	<script>
+		$(document).ready(function(){
+		$('button').click(function(){	
+		$.ajax({
+			url:'https://jsonplaceholder.typicode.com/todos/',
+			method:"GET",
+			success:function(result){
+				var data=result.slice(0,10);
+				data.forEach(function(i){
+					$("<div />",{
+					id: i.id,
+					html:i.title+'<button class= "delete" name='+i.id+'> DELETE</button>'}).appendTo(".row");
+				});
+			}
+		});
+		$(document).on('click',".delete",function(event){
+		let id =$(this).attr('name');
+		$.ajax({
+			url:'https://jsonplaceholder.typicode.com/todos/'+id,
+			method:'DELETE',
+			success:function(result){
+				alert("delete row?")
+				$('#'+id).remove();}
+		});	});	});	});
+	</script>
+</head>
+<body>
+	<button> Get data </button>
+	<div class="row"></div>
+</body> </html>
