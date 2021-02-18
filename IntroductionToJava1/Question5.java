@@ -26,4 +26,10 @@ public class Question5 {
                 commonSet.remove(arr2[i]);
             }
     }
-}
+
+     /*https://www.udemy.com/course/functional-programming-with-java/
+    username: nikhil.mittal@tothenew.com/igdefault
+    or username: manoj.mohan@tothenew.com/igefault
+    Nikhil Mittal11:12 AM
+    abhinav.srivastava@tothenew.com/igdefault
+*/
