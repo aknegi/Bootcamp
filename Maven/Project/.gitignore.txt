@@ -1,0 +1,4 @@
+.idea/
+target/
+Module1/target/
+Module2/target/
