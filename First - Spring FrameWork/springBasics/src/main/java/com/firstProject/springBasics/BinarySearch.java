@@ -1,21 +1,33 @@
 package com.firstProject.springBasics;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BinarySearch {
-    @Autowired
-    //Adding Autowired
+    @Autowired      //Adding Autowired
     private SortAlgorithm sortAlgorithm = null;
 
-    // Constructor Injection
-    public BinarySearch(SortAlgorithm algorithm) {
+    private String searchAlgo;
+
+    public BinarySearch(SortAlgorithm algorithm)  // Constructor Injection
+    {
         super();
         this.sortAlgorithm = algorithm;
     }
+
+
+    public String getSearchAlgo() {
+        return searchAlgo;
+    }
+
+    public void setSearchAlgo(String searchAlgo) {
+        this.searchAlgo = searchAlgo;
+    }
+
     public int searchNumber(int[] numbers, int number) {
-        // first sorting the given array.
-        numbers=sortAlgorithm.sort(numbers);
+        numbers = sortAlgorithm.sort(numbers);   // first sorting the given array.
+
         //Performing Binar Search
         int left = 0, right = numbers.length - 1;
         while (left <= right) {
@@ -28,4 +40,5 @@ public class BinarySearch {
                 right = medium - 1;
         }
         return -1;
-    }}
+    }
+}

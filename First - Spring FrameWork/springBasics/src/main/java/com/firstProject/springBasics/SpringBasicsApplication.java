@@ -19,5 +19,7 @@ public class SpringBasicsApplication {
         } else {
             System.out.println("element is not present");
         }
+        binarySearch.setSearchAlgo("Binary Search Algo");   //setting properties of bean
+        System.out.println(binarySearch.getSearchAlgo());   //getting properties of bean
     }
 }
