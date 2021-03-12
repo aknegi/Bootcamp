@@ -20,12 +20,11 @@ public class EmployeeService {
     @Autowired
     EmployeeFilterRepository employeeFilterRepository;
 
-    public void addEmployee() {
+    public void addEmployee( String name, int age, String location) {
         Employee e1 = new Employee();
-        e1.setId(1);
-        e1.setName("Alpha");
-        e1.setAge(27);
-        e1.setLocation("Noida");
+        e1.setName(name);
+        e1.setAge(age);
+        e1.setLocation(location);
         repository.save(e1);
     }
 
