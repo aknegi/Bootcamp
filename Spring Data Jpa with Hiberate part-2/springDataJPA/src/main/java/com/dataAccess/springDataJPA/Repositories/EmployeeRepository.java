@@ -15,9 +15,12 @@ public interface EmployeeRepository extends PagingAndSortingRepository<Employee,
     @Query("select firstName, lastName from Employee where salary > (select avg(salary) from Employee )")
     List<Object[]> searchBySalaryMoreThanAvg(Sort order);
 
+    @Query("select id from Employee where salary < (select avg(salary) from Employee)")
+    List<Integer> getIdWhereSalaryLessThanAvgSalary();
+
     @Modifying
-    @Query("UPDATE Employee set salary = :updatedSalary where salary<(select avg(salary)from Employee)")
-    void updateEmpSalary(@Param("updatedSalary") int updatedSalary);
+    @Query("UPDATE Employee set salary = :updatedSalary where id= :givenId")
+    void updateEmpSalary(@Param("updatedSalary") int updatedSalary, @Param("givenId") int id);
 
     @Modifying
     @Query("DELETE from Employee where salary < :minSalary")

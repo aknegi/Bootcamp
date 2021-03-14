@@ -35,15 +35,16 @@ public class EmployeeService {
 
     @Transactional
     public void updateSalary(int updatedSalary) {
-        employeeRepository.updateEmpSalary(updatedSalary);
+        List<Integer> allIds = employeeRepository.getIdWhereSalaryLessThanAvgSalary();
+        for (Integer id : allIds) {
+            employeeRepository.updateEmpSalary(updatedSalary, id);
+        }
     }
 
     @Transactional
     public void deleteEmployeeWithMinSalary(int minSal) {
         employeeRepository.deleteEmployee(minSal);
     }
-
-
 
 
     // For Native Query
@@ -58,8 +59,6 @@ public class EmployeeService {
     public void deleteDataByGivenAge(int age) {
         employeeRepository.deleteByGivenAge(age);
     }
-
-
 
 
     //For Component Mapping
