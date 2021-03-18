@@ -2,6 +2,7 @@ package com.springFramework.springDAAndTransactions;
 
 import com.springFramework.springDAAndTransactions.Services.AuthorService;
 import com.springFramework.springDAAndTransactions.Services.BidirectionalService;
+import com.springFramework.springDAAndTransactions.Services.ManyToManyService;
 import com.springFramework.springDAAndTransactions.Services.UnidirectionalService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +13,7 @@ public class SpringDaAndTransactionsApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringDaAndTransactionsApplication.class, args);
-        AuthorService service = context.getBean(AuthorService.class);
+        ManyToManyService service =context.getBean(ManyToManyService.class);
         service.addAuthor();
     }
 }
