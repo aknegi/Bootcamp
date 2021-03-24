@@ -1,6 +1,7 @@
 package com.auth2springsecurity.springsecurity;
 
 
+import com.auth2springsecurity.springsecurity.Enum.RoleType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -51,10 +52,10 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         http
                 .authorizeRequests()
                 .antMatchers("/").anonymous()
-                .antMatchers("/admin/home").hasAnyRole("ADMIN")
-                .antMatchers("/user/home").hasAnyRole("USER")
-                .antMatchers("/doLogout").hasAnyRole("ADMIN","USER","PREMIUM")
-                .antMatchers("premium/home").hasAnyRole("PREMIUM")
+                .antMatchers("/admin/home").hasAnyRole(RoleType.ADMIN.getUserRole())
+                .antMatchers("/user/home").hasAnyRole(RoleType.USER.getUserRole())
+                .antMatchers("/doLogout").hasAnyRole(RoleType.ADMIN.getUserRole(),RoleType.USER.getUserRole(),RoleType.PREMIUM.getUserRole())
+                .antMatchers("premium/home").hasAnyRole(RoleType.PREMIUM.getUserRole())
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()

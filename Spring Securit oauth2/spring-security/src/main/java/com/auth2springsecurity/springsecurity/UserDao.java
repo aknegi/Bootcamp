@@ -24,7 +24,7 @@ public class UserDao {
             List<GrantAuthorityImpl> grantAuthorities = new ArrayList<>();
 
             for (Role userRole : roles) {
-                grantAuthorities.add(new GrantAuthorityImpl(userRole.getUserRole()));
+                grantAuthorities.add(new GrantAuthorityImpl(userRole.getRole().getUserRole()));
             }
             return new AppUser(user.getUsername(), user.getPassword(), grantAuthorities);
         } else {

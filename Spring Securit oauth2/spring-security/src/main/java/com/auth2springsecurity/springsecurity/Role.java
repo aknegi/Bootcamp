@@ -1,5 +1,7 @@
 package com.auth2springsecurity.springsecurity;
 
+import com.auth2springsecurity.springsecurity.Enum.RoleType;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -9,9 +11,20 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String userRole;
+
+
+    private RoleType role;
+
     @ManyToMany(mappedBy = "roleList")
     private List<User> users;
+
+    public RoleType getRole() {
+        return role;
+    }
+
+    public void setRole(RoleType role) {
+        this.role = role;
+    }
 
     public int getId() {
         return id;
@@ -21,13 +34,7 @@ public class Role {
         this.id = id;
     }
 
-    public String getUserRole() {
-        return userRole;
-    }
 
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
-    }
 
     public List<User> getUsers() {
         return users;

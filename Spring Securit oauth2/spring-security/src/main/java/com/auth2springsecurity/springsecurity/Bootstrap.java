@@ -1,6 +1,7 @@
 package com.auth2springsecurity.springsecurity;
 
 
+import com.auth2springsecurity.springsecurity.Enum.RoleType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -23,9 +24,15 @@ public class Bootstrap implements ApplicationRunner {
         Role roleUser = new Role();
         Role rolePremium = new Role();
 
-        roleUser.setUserRole("ROLE_USER");
-        roleAdmin.setUserRole("ROLE_ADMIN");
-        rolePremium.setUserRole("ROLE_PREMIUM");
+        roleUser.setRole(RoleType.USER);
+        roleAdmin.setRole(RoleType.ADMIN);
+        rolePremium.setRole(RoleType.PREMIUM);
+
+
+        User premium = new User();
+        premium.setUsername("premium");
+        premium.setUserRole(rolePremium);
+
 
         User user = new User();
         user.setUsername("user");
@@ -36,9 +43,6 @@ public class Bootstrap implements ApplicationRunner {
         admin.setUserRole(roleAdmin);
         admin.setUserRole(roleUser);
 
-        User premium = new User();
-        premium.setUsername("premium");
-        premium.setUserRole(rolePremium);
 
         user.setPassword(passwordEncoder.encode("pass"));
         admin.setPassword(passwordEncoder.encode("pass"));
